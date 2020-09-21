@@ -39,7 +39,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|gif|jpg|jpeg)/,
+        test: /\.(png|gif|jpg|jpeg)$/,
         use: [
           {
             loader: 'file-loader',
@@ -50,10 +50,15 @@ module.exports = {
         ],
       },
       {
-        test: /.(woff|woff2|ttf)/,
+        test: /\.(woff|woff2|ttf)$/,
         use: [
           {
             loader: 'file-loader',
+            options: {
+              name: 'assets/[hash].[ext]',
+              mimetype: 'application/font-woff',
+              publicPath: '../',
+            },
           },
         ],
       },
