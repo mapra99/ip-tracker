@@ -1,9 +1,9 @@
 @import '../global/system';
 
 body {
-  background: red;
+  background: $dark-gray;
   
   h1 {
-    font-family: 'Rubik', sans-serif;
+    font-family: $theme-font;
   }
 }
