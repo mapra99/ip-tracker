@@ -56,7 +56,6 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: 'assets/[hash].[ext]',
-              mimetype: 'application/font-woff',
               publicPath: '../',
             },
           },
