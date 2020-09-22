@@ -1,12 +1,18 @@
+// library dependencies
 import React from 'react';
+
+// components
+import Hero from '../components/Hero';
+import Map from '../components/Map';
+
+// assets
 import '../assets/styles/containers/App.scss';
-import dummyImage from '../assets/static/images/dummyImage.png';
 
 const App = () => (
-  <div>
-    <h1>Hello World!</h1>
-    <img src={dummyImage} alt='' />
-  </div>
+  <>
+    <Hero />
+    <Map />
+  </>
 );
 
 export default App;

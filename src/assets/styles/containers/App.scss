@@ -1,9 +1,11 @@
 @import '../global/system';
 
 body {
-  background: $dark-gray;
-  
-  h1 {
-    font-family: $theme-font;
+  margin: 0;
+
+  main {
+    height: 100vh;
+    margin: 0;
+    width: 100vw;
   }
 }
