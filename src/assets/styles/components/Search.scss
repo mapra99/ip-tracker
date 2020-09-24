@@ -1,0 +1,65 @@
+@import '../global/system';
+
+.cta-search {
+  display: flex;
+  margin: 31px auto 0;
+
+  input {
+    border: none;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    box-shadow: 0px 50px 50px -25px rgba(0, 0, 0, 0.0983665);
+    box-sizing: border-box;
+    color: $very-dark-gray;
+    font-family: Rubik;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: normal;
+    height: 58px;
+    line-height: 21px;
+    width: 497px;
+    padding-left: 24px;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: $dark-gray;
+    }
+  }
+
+  button {
+    background-color: $black;
+    border: 0;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    box-sizing: border-box;
+    height: 58px;
+    transition: background-color .15s;
+    width: 58px;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: $very-dark-gray;
+      cursor: pointer;
+
+      .chevron-right-icon {
+        path {
+          stroke: $dark-gray;
+        }
+      }
+    }
+
+    .chevron-right-icon {
+      width: 12px;
+
+      path {
+        transition: stroke .15s;
+      }
+    }
+  }
+}

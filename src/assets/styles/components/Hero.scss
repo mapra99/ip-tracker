@@ -1,0 +1,29 @@
+@import '../global/system';
+
+.hero {
+  background-image: url('../../static/images/hero-bg.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  height: 280px;
+  width: 100vw;
+
+
+
+  .heading {
+    margin-top: 33px;
+    text-align: center;
+    h1 {
+      margin: 0;
+      color: $white;
+      font-family: Rubik;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 30px;
+      letter-spacing: -0.285714px;
+    }
+  }
+}
