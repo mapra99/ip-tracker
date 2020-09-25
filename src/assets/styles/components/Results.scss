@@ -1,0 +1,12 @@
+@import '../global/system';
+
+.results-wrap {
+  align-items: flex-start;
+  background-color: $white;
+  border-radius: 15px;
+  box-shadow: 0 50px 50px -25px rgba(0, 0, 0, 0.0983665);
+  box-sizing: border-box;
+  display: flex;
+  margin: 48px auto 0;
+  padding: 37px 32px;
+}

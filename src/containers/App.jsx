@@ -16,10 +16,10 @@ const App = () => (
     <Hero>
       <Search />
       <Results>
-        <ResultItem title='IP Address' value='192.212.174.101' />
+        <ResultItem title='IP Address' value='192.212.174.101' additionalClass='first-item' />
         <ResultItem title='Location' value='Brooklyn, NY 10001' />
         <ResultItem title='Timezone' value='UTC -05:00' />
-        <ResultItem title='ISP' value='SpaceX Starlink' />
+        <ResultItem title='ISP' value='SpaceX Starlink' additionalClass='last-item' />
       </Results>
     </Hero>
     <Map />

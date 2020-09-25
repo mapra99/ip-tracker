@@ -1,11 +1,11 @@
 // library dependencies
 import React from 'react';
 
-// components
-import ResultItem from './ResultItem';
+// assets
+import '../assets/styles/components/Results.scss';
 
-const Results = ({children}) => (
-  <div className="results-wrap">
+const Results = ({ children }) => (
+  <div className='results-wrap'>
     {children}
   </div>
 );

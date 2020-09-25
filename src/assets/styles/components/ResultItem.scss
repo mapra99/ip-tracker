@@ -1,0 +1,40 @@
+@import '../global/system';
+
+.result {
+  border-left: 1px solid rgba($black, .15);
+  flex: 1 1;
+  height: 100%;
+  padding: 0 32px;
+
+  &.first-item {
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  &.last-item {
+    padding-right: 0;
+  }
+
+  h2 {
+    color: $dark-gray;
+    font-family: 'Rubik', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: 1.75px;
+    line-height: 14px;
+    margin: 0 0 13px;
+    text-transform: uppercase;
+  }
+
+  p {
+    color: $very-dark-gray;
+    font-family: 'Rubik', sans-serif;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: -.232143px;
+    line-height: 30px;
+    margin: 0;
+  }
+}
