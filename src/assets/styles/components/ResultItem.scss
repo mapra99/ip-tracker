@@ -10,6 +10,13 @@
     padding: 0 15px;
   }
 
+  @media (max-width: $breakpt-small) {
+    border: 0;
+    margin-bottom: 24px;
+    padding: 0;
+    text-align: center;
+  }
+
   &.first-item {
     border-left: 0;
     padding-left: 0;
@@ -17,6 +24,10 @@
 
   &.last-item {
     padding-right: 0;
+
+    @media (max-width: $breakpt-small) {
+      margin-bottom: 0;
+    }
   }
 
   h2 {
@@ -32,8 +43,12 @@
 
     @media (max-width: $breakpt-medium) {
       font-size: 10px;
-      line-height: 12px;
       letter-spacing: 1.46px;
+      line-height: 12px;
+    }
+
+    @media (max-width: $breakpt-small) {
+      margin-bottom: 7px;
     }
   }
 

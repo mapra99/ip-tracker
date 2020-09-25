@@ -8,6 +8,10 @@
     padding: 0 24px;
   }
 
+  @media (max-width: $breakpt-small) {
+    margin-top: 29px;
+  }
+
   input {
     border: none;
     border-bottom-left-radius: 15px;
@@ -21,8 +25,9 @@
     font-weight: normal;
     height: 58px;
     line-height: 21px;
-    width: 497px;
+    max-width: calc(100vw - 106px);
     padding-left: 24px;
+    width: 497px;
 
     &:focus {
       outline: none;
@@ -30,6 +35,7 @@
 
     &::placeholder {
       color: $dark-gray;
+      text-overflow: ellipsis;
     }
   }
 

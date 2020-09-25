@@ -11,7 +11,14 @@
   padding: 37px 32px;
 
   @media (max-width: $breakpt-medium) {
-    padding: 37px 15px;
-    margin: 48px 24px 0;
+    padding: 37px 24px;
+  }
+
+  @media (max-width: $breakpt-small) {
+    align-items: center;
+    flex-direction: column;
+    margin: 24px 24px;
+    padding: 26px 24px;
+    width: calc(100% - 48px);
   }
 }
