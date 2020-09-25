@@ -1,9 +1,11 @@
 @import '../global/system';
 
 body {
-  background: red;
-  
-  h1 {
-    font-family: 'Rubik', sans-serif;
+  margin: 0;
+
+  main {
+    height: 100vh;
+    margin: 0;
+    width: 100vw;
   }
 }

@@ -1,12 +1,29 @@
+// library dependencies
 import React from 'react';
+
+// components
+import Hero from '../components/Hero';
+import Search from '../components/Search';
+import Results from '../components/Results';
+import ResultItem from '../components/ResultItem';
+import Map from '../components/Map';
+
+// assets
 import '../assets/styles/containers/App.scss';
-import dummyImage from '../assets/static/images/dummyImage.png';
 
 const App = () => (
-  <div>
-    <h1>Hello World!</h1>
-    <img src={dummyImage} alt='' />
-  </div>
+  <>
+    <Hero>
+      <Search />
+      <Results>
+        <ResultItem title='IP Address' value='192.212.174.101' additionalClass='first-item' />
+        <ResultItem title='Location' value='Brooklyn, NY 10001' />
+        <ResultItem title='Timezone' value='UTC -05:00' />
+        <ResultItem title='ISP' value='SpaceX Starlink' additionalClass='last-item' />
+      </Results>
+    </Hero>
+    <Map />
+  </>
 );
 
 export default App;
