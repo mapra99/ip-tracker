@@ -23,6 +23,10 @@
       letter-spacing: -0.285714px;
       line-height: 30px;
       margin: 0;
+
+      @media (max-width: $breakpt-medium) {
+        font-size: 26px;
+      }
     }
   }
 }

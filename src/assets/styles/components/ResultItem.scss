@@ -6,6 +6,10 @@
   height: 100%;
   padding: 0 32px;
 
+  @media (max-width: $breakpt-medium) {
+    padding: 0 15px;
+  }
+
   &.first-item {
     border-left: 0;
     padding-left: 0;
@@ -25,6 +29,12 @@
     line-height: 14px;
     margin: 0 0 13px;
     text-transform: uppercase;
+
+    @media (max-width: $breakpt-medium) {
+      font-size: 10px;
+      line-height: 12px;
+      letter-spacing: 1.46px;
+    }
   }
 
   p {
@@ -36,5 +46,11 @@
     letter-spacing: -.232143px;
     line-height: 30px;
     margin: 0;
+
+    @media (max-width: $breakpt-medium) {
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: -0.178571px;
+    }
   }
 }

@@ -4,6 +4,10 @@
   display: flex;
   margin: 31px auto 0;
 
+  @media (max-width: $breakpt-medium) {
+    padding: 0 24px;
+  }
+
   input {
     border: none;
     border-bottom-left-radius: 15px;
