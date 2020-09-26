@@ -12,31 +12,37 @@ import Map from '../components/Map';
 import '../assets/styles/containers/App.scss';
 
 const App = () => {
-  const API = 'http://localhost:3000/ips/1';
-  const [resultsVisible, setResultsVisible] = useState(false);
+  // const API_URL = 'http://localhost:3000/ips/1'; // toggle to this one if want to use the fake api
+  const API_URL = 'https://geo.ipify.org/api/v1?apiKey=at_levWfnyHKew7xTeTGSEWH6n1eTkPn&ipAddress=';
 
   const [ip, setIp] = useState('');
   const [location, setLocation] = useState('');
   const [timezone, setTimezone] = useState('');
   const [isp, setIsp] = useState('');
 
-  useEffect(() => {
-    fetch(API)
+  const loadData = (submittedIp) => (
+    fetch(`${API_URL}${submittedIp}`)
       .then((response) => response.json())
       .then((data) => {
-        setResultsVisible(true);
         setIp(data.ip);
         setLocation(`${data.location.city}, ${data.location.region}`);
         setTimezone(`UTC ${data.location.timezone}`);
         setIsp(data.isp);
-      });
-  }, []);
+      })
+  );
+
+  const triggerSearchApi = () => {
+    const ip = document.querySelector('input#ip').value;
+    loadData(ip);
+  };
+
+  const resultsVisible = () => (ip && location && timezone && isp);
 
   return (
     <>
       <Hero>
-        <Search />
-        <Results visible={resultsVisible}>
+        <Search onClick={triggerSearchApi} />
+        <Results visible={resultsVisible()}>
           <ResultItem title='IP Address' value={ip} additionalClass='first-item' />
           <ResultItem title='Location' value={location} />
           <ResultItem title='Timezone' value={timezone} />
