@@ -1,5 +1,5 @@
 // library dependencies
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 // components
 import Hero from '../components/Hero';
@@ -11,19 +11,41 @@ import Map from '../components/Map';
 // assets
 import '../assets/styles/containers/App.scss';
 
-const App = () => (
-  <>
-    <Hero>
-      <Search />
-      <Results>
-        <ResultItem title='IP Address' value='192.212.174.101' additionalClass='first-item' />
-        <ResultItem title='Location' value='Brooklyn, NY 10001' />
-        <ResultItem title='Timezone' value='UTC -05:00' />
-        <ResultItem title='ISP' value='SpaceX Starlink' additionalClass='last-item' />
-      </Results>
-    </Hero>
-    <Map />
-  </>
-);
+const App = () => {
+  const API = 'http://localhost:3000/ips/1';
+  const [resultsVisible, setResultsVisible] = useState(false);
+
+  const [ip, setIp] = useState('');
+  const [location, setLocation] = useState('');
+  const [timezone, setTimezone] = useState('');
+  const [isp, setIsp] = useState('');
+
+  useEffect(() => {
+    fetch(API)
+      .then((response) => response.json())
+      .then((data) => {
+        setResultsVisible(true);
+        setIp(data.ip);
+        setLocation(`${data.location.city}, ${data.location.region}`);
+        setTimezone(`UTC ${data.location.timezone}`);
+        setIsp(data.isp);
+      });
+  }, []);
+
+  return (
+    <>
+      <Hero>
+        <Search />
+        <Results visible={resultsVisible}>
+          <ResultItem title='IP Address' value={ip} additionalClass='first-item' />
+          <ResultItem title='Location' value={location} />
+          <ResultItem title='Timezone' value={timezone} />
+          <ResultItem title='ISP' value={isp} additionalClass='last-item' />
+        </Results>
+      </Hero>
+      <Map />
+    </>
+  );
+};
 
 export default App;
