@@ -76,4 +76,4 @@ yarn-error.log
 dist/
 
 # Design Docs
-docs/
+docs/design/
