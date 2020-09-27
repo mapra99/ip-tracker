@@ -1,11 +1,6 @@
 @import '../global/system';
 
-.map-wrap {
+.leaflet-container {
   height: calc(100vh - 280px);
-
-  .map-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  z-index: 0;
 }
