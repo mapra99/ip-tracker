@@ -6,7 +6,7 @@ import Hero from '../components/Hero';
 import Search from '../components/Search';
 import Results from '../components/Results';
 import ResultItem from '../components/ResultItem';
-import Map from '../components/Map';
+import MyMap from '../components/MyMap';
 
 // assets
 import '../assets/styles/containers/App.scss';
@@ -20,6 +20,8 @@ const App = () => {
   const [location, setLocation] = useState('');
   const [timezone, setTimezone] = useState('');
   const [isp, setIsp] = useState('');
+  const [lat, setLat] = useState();
+  const [lng, setLng] = useState();
   const [errorVisible, setErrorVisible] = useState(false);
 
   const loadData = (searchTerm, loadByIp) => (
@@ -34,6 +36,8 @@ const App = () => {
         setLocation(`${data.location.city}, ${data.location.region}`);
         setTimezone(`UTC ${data.location.timezone}`);
         setIsp(data.isp);
+        setLat(data.location.lat);
+        setLng(data.location.lng);
         setErrorVisible(false);
       })
       .catch((error) => {
@@ -65,7 +69,7 @@ const App = () => {
           <ResultItem title='ISP' value={isp} additionalClass='last-item' />
         </Results>
       </Hero>
-      <Map />
+      <MyMap lat={lat} lng={lng} />
     </>
   );
 };
