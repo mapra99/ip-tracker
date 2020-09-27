@@ -1,0 +1,31 @@
+{
+  "ips": [
+    {
+      "id": 1,
+      "ip": "186.84.20.233",
+      "location": {
+          "country": "CO",
+          "region": "Cundinamarca",
+          "city": "Soacha",
+          "lat": 4.57937,
+          "lng": -74.2168,
+          "postalCode": "",
+          "timezone": "-05:00",
+          "geonameId": 3667905
+      },
+      "as": {
+          "asn": 10620,
+          "name": "LACNIC-10620",
+          "route": "186.84.20.0/24",
+          "domain": "",
+          "type": ""
+      },
+      "isp": "Telmex Colombia S.A.",
+      "proxy": {
+          "proxy": false,
+          "vpn": false,
+          "tor": false
+      }
+    }
+  ]
+}
