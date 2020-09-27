@@ -12,6 +12,15 @@
     margin-top: 29px;
   }
 
+  &.loading:hover {
+    input,
+    button {
+      &:hover {
+        cursor: progress;
+      }
+    }
+  }
+
   input {
     border: none;
     border-bottom-left-radius: 15px;
