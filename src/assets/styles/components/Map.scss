@@ -1,0 +1,6 @@
+@import '../global/system';
+
+.leaflet-container {
+  height: calc(100vh - 280px);
+  z-index: 0;
+}

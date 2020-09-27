@@ -1,0 +1,71 @@
+@import '../global/system';
+
+.result {
+  border-left: 1px solid rgba($black, .15);
+  flex: 1 1;
+  height: 100%;
+  padding: 0 32px;
+
+  @media (max-width: $breakpt-medium) {
+    padding: 0 15px;
+  }
+
+  @media (max-width: $breakpt-small) {
+    border: 0;
+    margin-bottom: 24px;
+    padding: 0;
+    text-align: center;
+  }
+
+  &.first-item {
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  &.last-item {
+    padding-right: 0;
+
+    @media (max-width: $breakpt-small) {
+      margin-bottom: 0;
+    }
+  }
+
+  h2 {
+    color: $dark-gray;
+    font-family: 'Rubik', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: 1.75px;
+    line-height: 14px;
+    margin: 0 0 13px;
+    text-transform: uppercase;
+
+    @media (max-width: $breakpt-medium) {
+      font-size: 10px;
+      letter-spacing: 1.46px;
+      line-height: 12px;
+    }
+
+    @media (max-width: $breakpt-small) {
+      margin-bottom: 7px;
+    }
+  }
+
+  p {
+    color: $very-dark-gray;
+    font-family: 'Rubik', sans-serif;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: -.232143px;
+    line-height: 30px;
+    margin: 0;
+
+    @media (max-width: $breakpt-medium) {
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: -0.178571px;
+    }
+  }
+}
