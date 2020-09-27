@@ -2,7 +2,7 @@
 
 > Track the information about any public IP or domain you want :)
 
-![screenshot](./docs/mockup.png)
+[![screenshot](./docs/mockup.png)](https://ip-tracker.mapra99.vercel.app/)
 
 With the purpose of doing some React practice, I made this app where you can get the details of a given IP address or domain, and see its location on a map.
 
@@ -16,7 +16,7 @@ Using the [Ipify API](https://www.ipify.org/)
 
 ## Live Demo
 
-[Live Demo Link](https://ip-tracker.vercel.app/)
+[Live Demo Link](https://ip-tracker.mapra99.vercel.app/)
 
 
 ## Getting Started
@@ -60,6 +60,6 @@ Give a star if you like this project!
 
 - Frontendmentor for their amazing designs and its community!
 
-## 📝 License
+## License
 
 This project is [MIT](lic.url) licensed.
