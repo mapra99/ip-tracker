@@ -20,17 +20,27 @@ const App = () => {
   const [location, setLocation] = useState('');
   const [timezone, setTimezone] = useState('');
   const [isp, setIsp] = useState('');
+  const [errorVisible, setErrorVisible] = useState(false);
 
   const loadData = (searchTerm, loadByIp) => (
     fetch(loadByIp ? `${API_URL}&ipAddress=${searchTerm}` : `${API_URL}&domain=${searchTerm}`)
+      .then((response) => {
+        if (!response.ok) throw Error(response.messages);
+        return response;
+      })
       .then((response) => response.json())
       .then((data) => {
         setIp(data.ip);
         setLocation(`${data.location.city}, ${data.location.region}`);
         setTimezone(`UTC ${data.location.timezone}`);
         setIsp(data.isp);
-        setLoading(false);
+        setErrorVisible(false);
       })
+      .catch((error) => {
+        console.error(error);
+        setErrorVisible(true);
+      })
+      .finally(() => setLoading(false))
   );
 
   const isAnIpAddress = (ip) => (/^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/.test(ip));
@@ -42,13 +52,13 @@ const App = () => {
     event.preventDefault();
   };
 
-  const resultsVisible = () => (ip && location && timezone && isp);
+  const areResultsReady = () => (ip && location && timezone && isp);
 
   return (
     <>
       <Hero>
-        <Search onSubmit={triggerSearchApi} loading={loading} />
-        <Results visible={resultsVisible()}>
+        <Search onSubmit={triggerSearchApi} loading={loading} errorVisible={errorVisible} />
+        <Results visible={areResultsReady()}>
           <ResultItem title='IP Address' value={ip} additionalClass='first-item' />
           <ResultItem title='Location' value={location} />
           <ResultItem title='Timezone' value={timezone} />

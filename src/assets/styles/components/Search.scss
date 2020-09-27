@@ -1,84 +1,116 @@
 @import '../global/system';
 
-.cta-search {
-  display: flex;
-  margin: 31px auto 0;
+.cta-wrap {
+  margin: 0 auto;
 
-  @media (max-width: $breakpt-medium) {
-    padding: 0 24px;
-  }
-
-  @media (max-width: $breakpt-small) {
-    margin-top: 29px;
-  }
-
-  &.loading:hover {
-    input,
-    button {
-      &:hover {
-        cursor: progress;
-      }
+  .cta-search {
+    display: flex;
+    margin: 31px auto 0;
+  
+    @media (max-width: $breakpt-medium) {
+      padding: 0 24px;
     }
-  }
-
-  input {
-    border: none;
-    border-bottom-left-radius: 15px;
-    border-top-left-radius: 15px;
-    box-shadow: 0px 50px 50px -25px rgba(0, 0, 0, 0.0983665);
-    box-sizing: border-box;
-    color: $very-dark-gray;
-    font-family: Rubik;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: normal;
-    height: 58px;
-    line-height: 21px;
-    max-width: calc(100vw - 106px);
-    padding-left: 24px;
-    width: 497px;
-
-    &:focus {
-      outline: none;
+  
+    @media (max-width: $breakpt-small) {
+      margin-top: 29px;
     }
-
-    &::placeholder {
-      color: $dark-gray;
-      text-overflow: ellipsis;
-    }
-  }
-
-  button {
-    background-color: $black;
-    border: 0;
-    border-bottom-right-radius: 15px;
-    border-top-right-radius: 15px;
-    box-sizing: border-box;
-    height: 58px;
-    transition: background-color .15s;
-    width: 58px;
-
-    &:focus {
-      outline: none;
-    }
-
-    &:hover {
-      background-color: $very-dark-gray;
-      cursor: pointer;
-
-      .chevron-right-icon {
-        path {
-          stroke: $dark-gray;
+  
+    &.loading:hover {
+      input,
+      button {
+        &:hover {
+          cursor: progress;
         }
       }
     }
-
-    .chevron-right-icon {
-      width: 12px;
-
-      path {
-        transition: stroke .15s;
+  
+    input {
+      border: none;
+      border-bottom-left-radius: 15px;
+      border-top-left-radius: 15px;
+      box-shadow: 0px 50px 50px -25px rgba(0, 0, 0, 0.0983665);
+      box-sizing: border-box;
+      color: $very-dark-gray;
+      font-family: Rubik;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: normal;
+      height: 58px;
+      line-height: 21px;
+      max-width: calc(100vw - 106px);
+      padding-left: 24px;
+      width: 497px;
+  
+      &:focus {
+        outline: none;
       }
+  
+      &::placeholder {
+        color: $dark-gray;
+        text-overflow: ellipsis;
+      }
+    }
+  
+    button {
+      background-color: $black;
+      border: 0;
+      border-bottom-right-radius: 15px;
+      border-top-right-radius: 15px;
+      box-sizing: border-box;
+      height: 58px;
+      transition: background-color .15s;
+      width: 58px;
+      z-index: 1;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:hover {
+        background-color: $very-dark-gray;
+        cursor: pointer;
+  
+        .chevron-right-icon {
+          path {
+            stroke: $dark-gray;
+          }
+        }
+      }
+  
+      .chevron-right-icon {
+        width: 12px;
+  
+        path {
+          transition: stroke .15s;
+        }
+      }
+    }
+  }
+
+  .error-messages {
+    animation-duration: .2s;
+    animation-name: slidein;
+    background-color: $white;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top: 15px;
+    opacity: .85;
+    padding: 39px 24px 24px;
+    position: relative;
+    top: -15px;
+    z-index: 0;
+
+    p {
+      color: red;
+      font-family: 'Rubik', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      margin: 0;
+    }
+
+    .ip {
+      margin-bottom: 10px;
     }
   }
 }
