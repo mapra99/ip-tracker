@@ -1,5 +1,5 @@
 // library dependencies
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 // components
 import Hero from '../components/Hero';
