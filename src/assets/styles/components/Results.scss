@@ -62,9 +62,7 @@
   position: relative;
   display: flex;
   background-color: $white;
-  border-radius: 15px;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
+  border-radius: 15px 15px 0 0;
 
   @media (max-width: $breakpt-small) {
     justify-content: flex-start;
