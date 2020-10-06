@@ -1,27 +1,103 @@
 @import '../global/system';
 
 .results-wrap {
+  position: relative;
   align-items: flex-start;
   animation-duration: .2s;
   animation-name: slidein;
-  background-color: $white;
-  border-radius: 15px;
   box-shadow: 0 50px 50px -25px rgba(0, 0, 0, 0.0983665);
   box-sizing: border-box;
-  display: flex;
+  display: block;
+  flex: 1;
+  justify-content: center;
+  width: auto;
+  max-width: calc(100% - 48px);
   margin: 48px auto 0;
   padding: 37px 32px;
   z-index: 2;
+  border-radius: 15px;
+  background-color: $white;
 
   @media (max-width: $breakpt-medium) {
     padding: 37px 24px;
   }
 
   @media (max-width: $breakpt-small) {
+    display: block;
+    margin: 24px 24px;
+    padding: 0;
+    width: calc(100% - 48px);
+    height: auto;
+    background-color: transparent;
+  }
+
+  &.hidden > div {
+    .results-content {
+      @media (max-width: $breakpt-small) {
+        max-height: 0;
+        opacity: 0;
+      }
+    }
+    .results-footer {
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      border-top-color: transparent;
+      > * {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+
+.results-container {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+  border-radius: 15px;
+
+  @media (max-width: $breakpt-small) {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.results-content {
+  position: relative;
+  display: flex;
+  //transition: max-height .3s linear, opacity .3s linear;
+  background-color: $white;
+  border-radius: 15px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+
+  @media (max-width: $breakpt-small) {
+    justify-content: flex-start;
+    flex-direction: column;
+    height: auto;
+    max-height: 400px;
+    overflow: auto;
+  }
+}
+
+.results-footer {
+  display: none;
+  padding: 16px 0;
+  background-color: $white;
+  border-top: 1px solid lightgrey;
+  text-align: center;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  cursor: pointer;
+  outline: none;
+  //transition: border-top-left-radius .5s linear, border-top-right-radius .5s linear;
+
+  & > * {
+    width: 16px;
+    filter: invert(100%);
+    transform: rotate(-90deg);
+  }
+
+  @media (max-width: $breakpt-small) {
+    display: flex;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 24px 24px;
-    padding: 26px 24px;
-    width: calc(100% - 48px);
   }
 }
