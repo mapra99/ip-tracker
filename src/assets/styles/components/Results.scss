@@ -61,7 +61,6 @@
 .results-content {
   position: relative;
   display: flex;
-  //transition: max-height .3s linear, opacity .3s linear;
   background-color: $white;
   border-radius: 15px;
   border-bottom-left-radius: 0px;
@@ -86,7 +85,6 @@
   border-bottom-right-radius: 15px;
   cursor: pointer;
   outline: none;
-  //transition: border-top-left-radius .5s linear, border-top-right-radius .5s linear;
 
   & > * {
     width: 16px;
