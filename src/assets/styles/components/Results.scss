@@ -84,10 +84,13 @@
   cursor: pointer;
   outline: none;
 
-  & > * {
+  & > svg {
     width: 16px;
-    filter: invert(100%);
     transform: rotate(-90deg);
+
+    path {
+      stroke: $very-dark-gray;
+    }
   }
 
   @media (max-width: $breakpt-small) {
